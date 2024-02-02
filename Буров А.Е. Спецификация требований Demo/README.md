@@ -27,9 +27,9 @@
 Программа должна обеспечивать хранение пользовательских данных. Прграмма не предназначена для сбора, хранения и предачи конфиденциальных данных.
 
 <table>
-     <th style="text-align:left;min-width:300 px;width:25 %"> <a id = "1.3.-use case"href="#">1.3.-use case</a>
-     </th>       
+      <a title = "rrrr" id = "1.3.-use case" href="#">1.3.-use case</a>
 </table> 
+
 <img  src="image-2.png" align="middle" width="300" height="500"  alt="1.3.-use case" /> </p></td> 
 
 <h3 id = "1.4. Определения и сокращения"> 1.4. Определения и сокращения</h3>
