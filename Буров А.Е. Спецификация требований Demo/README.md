@@ -51,7 +51,7 @@
 <br></bt>
 <table style="width:100%">
   <tr>
-    <th style="text-align:left;min-width:160px;width:25%"><a id="BIW-01" href="#">BIW-01</a></th>
+    <th style="text-align:left;min-width:160px;width:25%"><a Title = "Проверка полей ввода" id="BIW-01" href="#">BIW-01</a></th>
     <th colspan="2" style="width:100%;text-align:left">Проверка полей ввода</th> 
   </tr>
   <tr>
