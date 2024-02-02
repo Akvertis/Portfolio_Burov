@@ -33,11 +33,11 @@
 <img  title = "Диаграмма вариантов использования" src="image-2.png" align="middle" width="300" height="500"  alt="1.3.-use case" />
 
 <h3 id = "1.4. Определения и сокращения"> 1.4. Определения и сокращения</h3>
-<ul>
-<li>Прграмма - Система компании BIWOL<sup><span style="font-size:8px;">TM</span></sup></li>
-<li>SQL - Structured Query Language — «язык структурированных запросов»</li>
-<li>SRS - software requirements specification (структурированный набор требований)</li>
-</ul>
+
+- Программа - Система компании BIWOL<sup><span style="font-size:8 px;">TM</span></sup>
+- SQL - Structured Query Language — «язык структурированных запросов»
+- SRS - software requirements specification (структурированный набор требований)
+
 <h2 id = "1.5. Ссылки">1.5. Ссылки</h2>
 <ul>
 <li><p><a title = "Главный сайт компании BIWOL">biwol.ru</a> - главный сайт компании BIWOL<sup><span style="font-size:8px;">TM</span></sup>;</p></li> 
