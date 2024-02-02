@@ -56,7 +56,7 @@
     <th style="text-align:left;min-width:160 px;width:25 %"><a Title = "Проверка полей ввода" id="BIW-01" href="#">BIW-01</a></th>
     <th colspan="2" style="width:100 %;text-align:left">Проверка полей ввода</th> 
   <tr>
-  <td colspan="3"><p align="justify">
+  <td colspan="2"><p align="justify">
   
   - Все поля ввода должны проходить проверку на корректность заполнения;
   - В случаях не прохождения проверки, программа не должна повзолять выполнить действие; 
@@ -91,9 +91,10 @@
 <br></br>
   </tr>
   </td>
+  </p>
   <tr>
     <td>2023-12-18</td>
-    <td><b style="color:#00ff00">Согласовано</b></td>
+    <th><b style="color:#00ff00">Согласовано</b></th>
    </tr>
 </table>
 <br></br>
@@ -103,7 +104,7 @@
     <th style="text-align:left;min-width:160 px;width:25 %"> <a Title = "Регистрация пользователя" id="BIW-AC-01" href="#">BIW-AC-01</a></th>
     <th colspan="2" style="width:100 %;text-align:left">Регистрация пользователя</th> 
   <tr>
-  <td colspan="3"><p align="justify">
+  <td colspan="2"><p align="justify">
 
   Программа должна позволять пользователю зарегистрироваться в системе используя свой e-mail.
   
@@ -127,16 +128,16 @@
   </p>
   <tr>
     <td>2023-12-18</td>
-    <td><b style="color:#00f000">Согласовано</b></td>
+    <th><b style="color:#00f000">Согласовано</b></th>
   </tr>
 </table><br/><br/>
 
-<table style="width:100%">
+<table style="width:100 %">
   <tr>
-    <th style="text-align:left;min-width:160px;width:25%"><a id="BIW-AC-02" href="#">BIW-AC-02</a></th>
-    <th colspan="2" style="width:100%;text-align:left">Окно регистрации и авторизации</th> 
+    <th style="text-align:left;min-width:160 px;width:25 %"><a id="BIW-AC-02" href="#">BIW-AC-02</a></th>
+    <th colspan="2" style="width:100 %;text-align:left">Окно регистрации и авторизации</th> 
   </tr>
-  <td colspan="3"><p align="justify"> 
+  <td colspan="2"><p align="justify"> 
 <u>Окно регистрации</u>
  <p>На главной странице должна существовать кнопка "Зарегистрироваться". При нажатии, программа должна вывести окно регистрации с полями (Макет <a href= "#BIW-AC-02-example-reg">BIW-AC-02-example-reg</a>).</p>
  <p> В окне регистрации пользователь должен иметь возможность выполнить действия:</p>
