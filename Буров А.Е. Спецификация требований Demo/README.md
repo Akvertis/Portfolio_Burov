@@ -39,20 +39,20 @@
 - SRS - software requirements specification (структурированный набор требований)
 
 <h2 id = "1.5. Ссылки">1.5. Ссылки</h2>
-<ul>
-<li><p><a title = "Главный сайт компании BIWOL">biwol.ru</a> - главный сайт компании BIWOL<sup><span style="font-size:8px;">TM</span></sup>;</p></li> 
-<li><p><a href = "http://agilemanifesto.org/iso/ru/manifesto.html" title = "Manifesto for Agile Software Development">Манифест</a> - при разработке данного документа следует придерживаться основополагающих принципов Agile-разработки;</p></li>
-<li><p><a href= "https://www.ietf.org/rfc/rfc2119.txt" title= "Ключевые слова для использования в RFC для указания уровней требований">RFC2119</a> - ключевые слова для использования в RFC для указания уровней требований" - интерпретируется как использование ключевых слов "ТРЕБУЕТСЯ", "ДОЛЖЕН", "НЕ ДОЛЖЕН", "СЛЕДУЕТ", "НЕ СЛЕДУЕТ", "РЕКОМЕНДУЕТСЯ", "МОЖЕТ" и "НЕОБЯЗАТЕЛЬНО" в этом документе (ключевые слова могут быть написаны строчными буквами в тексте документа);</p></li>
-<li><p><a href= "https://autoit-script.ru/docs/appendix/ascii.htm" title="Коды ASCII символов">Коды ASCII символов</a> - этот список может помочь при выполнении требований к текстовым форматам;</p></li>
-<li><p><a href= "https://datatracker.ietf.org/doc/html/rfc3629" title= "Стандарт UNF-8">RFC3629</a> -  cтандарт <u>UTF-8</u> может помочь при выполнении требований к текстовым форматам;</p></li>
-</ul>
+
+- <a title = "Главный сайт компании BIWOL">biwol.ru</a> - главный сайт компании BIWOL<sup><span style="font-size:8 px;">TM</span></sup>;
+- <a href = "http://agilemanifesto.org/iso/ru/manifesto.html" title = "Manifesto for Agile Software Development">Манифест</a> - при разработке данного документа следует придерживаться основополагающих принципов Agile-разработки;
+- <a href= "https://www.ietf.org/rfc/rfc2119.txt" title= "Ключевые слова для использования в RFC для указания уровней требований">RFC2119</a> - ключевые слова для использования в RFC для указания уровней требований" - интерпретируется как использование ключевых слов "ТРЕБУЕТСЯ", "ДОЛЖЕН", "НЕ ДОЛЖЕН", "СЛЕДУЕТ", "НЕ СЛЕДУЕТ", "РЕКОМЕНДУЕТСЯ", "МОЖЕТ" и "НЕОБЯЗАТЕЛЬНО" в этом документе (ключевые слова могут быть написаны строчными буквами в тексте документа);
+- <a href= "https://autoit-script.ru/docs/appendix/ascii.htm" title="Коды ASCII символов">Коды ASCII символов</a> - этот список может помочь при выполнении требований к текстовым форматам;
+- <a href= "https://datatracker.ietf.org/doc/html/rfc3629" title= "Стандарт UNF-8">RFC3629</a> -  cтандарт <u>UTF-8</u> может помочь при выполнении требований к текстовым форматам.
+
 <h2 id = "2. Системные характеристики и требования" >2. Системные характеристики и требования</h2>
 <h3 id = "3.1. Функциональные требования">3.1. Функциональные требования</h3>
 <br></bt>
-<table style="width:100%">
+<table style="width:100 %">
   <tr>
-    <th style="text-align:left;min-width:160px;width:25%"><a Title = "Проверка полей ввода" id="BIW-01" href="#">BIW-01</a></th>
-    <th colspan="2" style="width:100%;text-align:left">Проверка полей ввода</th> 
+    <th style="text-align:left;min-width:160 px;width:25 %"><a Title = "Проверка полей ввода" id="BIW-01" href="#">BIW-01</a></th>
+    <th colspan="2" style="width:100 %;text-align:left">Проверка полей ввода</th> 
   </tr>
   <tr>
     <td colspan="3"><p align="justify"> 
