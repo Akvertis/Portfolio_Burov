@@ -30,7 +30,7 @@
       <a title = "Диаграмма вариантов использования" id = "1.3.-use case" href="#">1.3.-use case</a>
 </p> 
 
-<img  title = "Диаграмма вариантов использования" src="image-2.png" align="middle" width="300" height="500"  alt="1.3.-use case" /> </p></td> 
+<img  title = "Диаграмма вариантов использования" src="image-2.png" align="middle" width="300" height="500"  alt="1.3.-use case" />
 
 <h3 id = "1.4. Определения и сокращения"> 1.4. Определения и сокращения</h3>
 <ul>
