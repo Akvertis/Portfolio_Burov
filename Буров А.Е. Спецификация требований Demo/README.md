@@ -53,9 +53,8 @@
 
 <table>
   <tr>
-    <th><a Title = "Проверка полей ввода" id="BIW-01" href="#">BIW-01</a></th>
-    <th colspan="2">Проверка полей ввода</th>
-  </tr>
+  <th><a Title = "Проверка полей ввода" id="BIW-01" href="#">BIW-01</a></th>
+  <th>Проверка полей ввода</th>
   <tr>
   <td colspan="2"><p align="justify">
   
@@ -92,19 +91,17 @@
 <br></br>
   </tr>
   </td>
-  </p>
   <tr>
     <th>2023-12-18</th>
     <th><b style="color:#00ff00">Согласовано</b></th>
-   </tr>
+  </tr>
 </table>
 <br></br>
 <h3 id = "3.1.1. Учетная запись (-AC)">3.1.1. Учетная запись (-AC)</h3>
 <table>
   <tr>
-    <th> <a Title = "Регистрация пользователя" id="BIW-AC-01" href="#">BIW-AC-01</a></th>
-    <th colspan="2">Регистрация пользователя</th>
-  </tr>
+    <th ><a Title = "Регистрация пользователя" id="BIW-AC-01" href="#">BIW-AC-01</a></th>
+    <th >Регистрация пользователя</th>
   <tr>
   <td colspan="2"><p align="justify">
 
