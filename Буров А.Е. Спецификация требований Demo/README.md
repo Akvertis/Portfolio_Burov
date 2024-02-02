@@ -1,6 +1,6 @@
-</head>
 <body style="display:flex;max-width:100% !important"><div id="_html" class="markdown-body">
 <h1 id="Спецификация требований к програмному обеспечению BIWOL">Частичная демонстрация спецификации требований к програмному обеспечению BIWOL<sup><span style="font-size:15px;">TM</span></sup> website</h1>
+<hr>
 <h3 id="Выполнил: Буров А.Е."> Выполнил: Буров А.Е</h3>
 
 <h2 id="1-общие-сведения">1. Общие сведения</h2>
