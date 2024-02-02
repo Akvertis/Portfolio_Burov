@@ -40,7 +40,7 @@
 </ul>
 <h2 id = "1.5. Ссылки">1.5. Ссылки</h2>
 <ul>
-<li><p><a href= "https://biwol.ru" title = "Главный сайт компании BIWOL">biwol.ru</a> - главный сайт компании BIWOL<sup><span style="font-size:8px;">TM</span></sup>;</p></li> 
+<li><p><a href= "" title = "Главный сайт компании BIWOL">biwol.ru</a> - главный сайт компании BIWOL<sup><span style="font-size:8px;">TM</span></sup>;</p></li> 
 <li><p><a href = "http://agilemanifesto.org/iso/ru/manifesto.html" title = "Manifesto for Agile Software Development">Манифест</a> - при разработке данного документа следует придерживаться основополагающих принципов Agile-разработки;</p></li>
 <li><p><a href= "https://www.ietf.org/rfc/rfc2119.txt" title= "Ключевые слова для использования в RFC для указания уровней требований">RFC2119</a> - ключевые слова для использования в RFC для указания уровней требований" - интерпретируется как использование ключевых слов "ТРЕБУЕТСЯ", "ДОЛЖЕН", "НЕ ДОЛЖЕН", "СЛЕДУЕТ", "НЕ СЛЕДУЕТ", "РЕКОМЕНДУЕТСЯ", "МОЖЕТ" и "НЕОБЯЗАТЕЛЬНО" в этом документе (ключевые слова могут быть написаны строчными буквами в тексте документа);</p></li>
 <li><p><a href= "https://autoit-script.ru/docs/appendix/ascii.htm" title="Коды ASCII символов">Коды ASCII символов</a> - этот список может помочь при выполнении требований к текстовым форматам;</p></li>
