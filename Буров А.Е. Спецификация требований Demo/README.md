@@ -54,7 +54,7 @@
 <table>
   <tr>
     <th><a Title = "Проверка полей ввода" id="BIW-01" href="#">BIW-01</a></th>
-    <th>Проверка полей ввода</th> 
+    <th colspan="2">Проверка полей ввода</th> 
   <tr>
   <td colspan="2"><p align="justify">
   
@@ -101,8 +101,8 @@
 <h3 id = "3.1.1. Учетная запись (-AC)">3.1.1. Учетная запись (-AC)</h3>
 <table style="width:100 %">
   <tr>
-    <th style="text-align:left;min-width:160 px;width:25 %"> <a Title = "Регистрация пользователя" id="BIW-AC-01" href="#">BIW-AC-01</a></th>
-    <th colspan="2" style="width:100 %;text-align:left">Регистрация пользователя</th> 
+    <th> <a Title = "Регистрация пользователя" id="BIW-AC-01" href="#">BIW-AC-01</a></th>
+    <th colspan="2">Регистрация пользователя</th> 
   <tr>
   <td colspan="2"><p align="justify">
 
@@ -127,7 +127,7 @@
   </td>
   </p>
   <tr>
-    <td>2023-12-18</td>
+    <th>2023-12-18</t>
     <th><b style="color:#00f000">Согласовано</b></th>
   </tr>
 </table><br/><br/>
