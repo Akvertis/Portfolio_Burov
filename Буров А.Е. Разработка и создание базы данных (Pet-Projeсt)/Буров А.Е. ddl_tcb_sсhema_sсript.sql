@@ -38,10 +38,10 @@ CREATE INDEX users_pass_change_link_idx ON tcb.users USING btree (pass_change_li
 
 --drop table users
 
---select * FROM users --тестовая выборка из таблицы users (Исправно)
+--select * FROM users 						--тестовая выборка из таблицы users (Исправно)
 
 /*
-INSERT into users 										--тестовое добавление строки (Исправно)
+INSERT into users						--тестовое добавление строки (Исправно)
 	(user_mail, premium_status, reg_date)   
 values 
 	('bibop182@yandex.ru', false, current_timestamp);
@@ -49,7 +49,7 @@ Commit;
 */
 
 /*
-INSERT into users 										--тестовое добавление строки (Исправно)
+INSERT into users						--тестовое добавление строки (Исправно)
 	(user_mail, premium_status, reg_date)
 values 
 	('wolen003@mail.ru', false, current_timestamp);
@@ -57,7 +57,7 @@ Commit;
 */
 
 /*
-INSERT into users 										--тестовое добавление строки (Исправно)
+INSERT into users						--тестовое добавление строки (Исправно)
 	(user_mail, premium_status, reg_date)   
 values 
 	('wolen001@mail.ru', false, current_timestamp);
@@ -78,10 +78,10 @@ COMMENT ON COLUMN course.course_name  	IS 'Название курса';
 
 --drop table course
 
---SELECT * FROM course -- тестовая выборка из таблицы курсов (Исправно)
+--SELECT * FROM course 			-- тестовая выборка из таблицы курсов (Исправно)
 
 /*
-INSERT INTO course (course_name) -- тестовое добавление строки (Исправно)
+INSERT INTO course (course_name) 	-- тестовое добавление строки (Исправно)
 VALUES ('SQL_course');
 COMMIT;
 */
@@ -110,23 +110,23 @@ CREATE INDEX certificate_certification_date_idx ON tcb.certificate USING btree (
 
 --drop table certificate
 
---SELECT * FROM certificate -- тестовая выборка из таблицы сертификатов
+--SELECT * FROM certificate 						-- тестовая выборка из таблицы сертификатов
 
 /*
-INSERT INTO certificate (course_id, user_id) 					-- тестовое добавление строки (Исправно)
+INSERT INTO certificate (course_id, user_id)				-- тестовое добавление строки (Исправно)
 VALUES (1,1);
 COMMIT;
 */
 
 /*
-SELECT 
+SELECT									--тестовое соединение с таблицей users для выявление наличия сертификата (Исправно)
 	users.user_mail  
 FROM certificate
-	LEFT JOIN users ON users.id = certificate.user_id 			--тестовое соединение с таблицей users для выявление наличия сертификата (Исправно)
+	LEFT JOIN users ON users.id = certificate.user_id		
 	WHERE certificate.certificate_id IS NOT NULL
 */
 /*
-SELECT 															--тестовое соединение с таблицей users для выявление отсутвия сертификата (Исправно)
+SELECT									--тестовое соединение с таблицей users для выявление отсутствия сертификата (Исправно)
 	users.user_mail
 FROM users
 	LEFT JOIN certificate ON certificate.user_id  = users.id  
@@ -146,11 +146,11 @@ COMMENT ON COLUMN scheme.scheme_script 	 IS 'Тело скрипта схемы 
 
 --drop table sheme
 
---SELECT * FROM scheme -- тестовая выборка из таблицы sheme (Исправно)
+--SELECT * FROM scheme 				-- тестовая выборка из таблицы sheme (Исправно)
 
 /*
-INSERT INTO scheme (scheme_script)
-VALUES ('test_text_for_the_shema_skript'); --тестовое добавление строки (Исправно)
+INSERT INTO scheme (scheme_script)		--тестовое добавление строки (Исправно)
+VALUES ('test_text_for_the_shema_skript'); 	
 */
 
 ---------------------------------------------------------------------------- Раздел 5 (Таблица tasks)
@@ -174,17 +174,17 @@ COMMENT ON COLUMN tasks.scheme_id	IS 'Внешний ключ к таблице 
 
 --drop table tasks
 
---SELECT * FROM tasks 													--тестовая выборка из таблицы tasks (Исправно)
+--SELECT * FROM tasks								--тестовая выборка из таблицы tasks (Исправно)
 
 /*
-INSERT INTO tasks 														-- тестовое добавление строки (Исправно)
+INSERT INTO tasks								-- тестовое добавление строки (Исправно)
 	(task_text, task_script, solution, scheme_id)
 VALUES 
 	('first_task_text', 'test_task_skript_text', 'test_solution_text',1); 
 */
 
 /*
-SELECT 																	--тестовое соединение с таблицей sсheme (Исправно)
+SELECT										--тестовое соединение с таблицей sсheme (Исправно)
 	s.scheme_script
 FROM tasks 
 	LEFT JOIN scheme s ON s.scheme_id = tasks.scheme_id  				
@@ -216,10 +216,10 @@ CREATE INDEX lesson_lesson_name_idx ON tcb.lesson USING btree (lesson_name);
 
 --drop table lesson
 
---SELECT * FROM lesson --тестовая выборка из таблицы lesson (Исправно)
+--SELECT * FROM lesson 						--тестовая выборка из таблицы lesson (Исправно)
 
 /*
-INSERT INTO lesson											-- тестовое добавление строки (Исправно)
+INSERT INTO lesson						-- тестовое добавление строки (Исправно)
 (course_id, task_id, lesson_order, lesson_name, theory_text)
 VALUES
 (1,2,1,'Введение в курс SQL', 'test_teory_text_lesson_1');
@@ -270,7 +270,7 @@ VALUES
 */
 
 /*
-SELECT 							--тестовое соединение с таблицей course и certificate (Исправно)
+SELECT 					--тестовое соединение с таблицей course и certificate (Исправно)
 	c.certificate_id,
 	c2.course_name,
 	u.short_name
@@ -306,12 +306,12 @@ CREATE INDEX lesson_res_reached_idx ON tcb.lesson_res USING btree (reached);
 --SELECT * FROM lesson_res 					--тестовая выборка из таблицы lesson_res (Исправно)
 
 /*
-INSERT INTO lesson_res (lesson_id, user_id) -- тестовое добавление строки (Исправно)
+INSERT INTO lesson_res (lesson_id, user_id) 			-- тестовое добавление строки (Исправно)
 VALUES
 (1,1);
 */
 /*
-SELECT 										--тестовое соединение с таблицей users и lesson (Исправно)
+SELECT								--тестовое соединение с таблицей users и lesson (Исправно)
 	u.user_mail, 
 	l.lesson_name, 
 	lr.reached 
@@ -346,15 +346,16 @@ COMMIT;
 
 --drop table task_res
 
---SELECT * FROM task_res 							  --тестовая выборка из таблицы task_res (Исправно)
+--SELECT * FROM task_res				--тестовая выборка из таблицы task_res (Исправно)
+
 /*
-INSERT INTO task_res								  -- тестовое добавление строки (Исправно)
+INSERT INTO task_res					-- тестовое добавление строки (Исправно)
  (task_id, user_id)
 VALUES 
 (2,1);
 */
 /*
-SELECT u.short_name, t.task_text   FROM task_res tr   --тестовое соединение с таблицей users и tasks (Исправно)
+SELECT u.short_name, t.task_text   FROM task_res tr	--тестовое соединение с таблицей users и tasks (Исправно)
 	LEFT JOIN users u ON u.id = tr.user_id
 	LEFT JOIN tasks t ON t.task_id = tr.task_id 
 	WHERE u.id =1;
