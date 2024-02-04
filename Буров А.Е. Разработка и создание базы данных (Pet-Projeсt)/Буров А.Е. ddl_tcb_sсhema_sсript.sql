@@ -10,19 +10,19 @@ CREATE TABLE users -- пользователи
 	user_mail Varchar (320)	NOT NULL ,	
 	premium_status Boolean	NOT NULL,		
 	reg_date timestamp NOT NULL default current_timestamp,		
-	short_name	Varchar (128)	NULL,		
-	failure_count int	NOT NULL default 0,		
+	short_name Varchar (128) NULL,		
+	failure_count int NOT NULL default 0,		
 	failure_date timestamp NULL,	
-	Pass_change	timestamp NULL,		
+	Pass_change timestamp NULL,		
 	Pass_change_link timestamp NULL,		
 	Pass_link_id Text NULL
 );
 
-COMMENT ON TABLE  users 				    IS 'Список зарегистрированных пользователей';
-COMMENT ON COLUMN users.id 			   		IS 'Первичный ключ, уникальный идентификатор пользователя (только для данного прототипа базы данных)';
-COMMENT ON COLUMN users.user_mail  	   		IS 'Email пользователя (уникальный идентификатор, первичный, натуральный ключ для финальной версии базы данных)';
+COMMENT ON TABLE  users 			IS 'Список зарегистрированных пользователей';
+COMMENT ON COLUMN users.id 			IS 'Первичный ключ, уникальный идентификатор пользователя (только для данного прототипа базы данных)';
+COMMENT ON COLUMN users.user_mail  	   	IS 'Email пользователя (уникальный идентификатор, первичный, натуральный ключ для финальной версии базы данных)';
 COMMENT ON COLUMN users.premium_status  	IS 'Cтатус пользователя, премиум статус - True, базовый статус - False';
-COMMENT ON COLUMN users.reg_date  	   		IS 'Дата регистрации пользователя';
+COMMENT ON COLUMN users.reg_date  	   	IS 'Дата регистрации пользователя';
 COMMENT ON COLUMN users.short_name     		IS 'Короткое имя пользователя в профиле';
 COMMENT ON COLUMN users.failure_count   	IS 'Счетчик ошибок входа пользователя в систему';
 COMMENT ON COLUMN users.failure_date    	IS 'Дата ошибки входа пользователя в систему';
@@ -68,13 +68,13 @@ Commit;
 ---------------------------------------------------------------------------- Раздел 2 (Таблица course)
  CREATE TABLE course -- таблица курса
 (
-	course_id	serial	NOT NULL PRIMARY KEY,	
-	course_name	text NOT NULL
+	course_id serial NOT NULL PRIMARY KEY,	
+	course_name text NOT NULL
 );
 
-COMMENT ON TABLE  course  			  IS 'Список курсов';
-COMMENT ON COLUMN course.course_id    IS 'Первичный ключ, уникальный идентификатор курса';
-COMMENT ON COLUMN course.course_name  IS 'Название курса';
+COMMENT ON TABLE course			IS 'Список курсов';
+COMMENT ON COLUMN course.course_id   	IS 'Первичный ключ, уникальный идентификатор курса';
+COMMENT ON COLUMN course.course_name  	IS 'Название курса';
 
 --drop table course
 
@@ -89,20 +89,20 @@ COMMIT;
 CREATE TABLE certificate --таблица сертификатов
 (
 	certificate_id	bigserial NOT NULL PRIMARY KEY,	
-	course_id	int	NOT NULL,	
-	certification_date	timestamp NOT NULL default current_timestamp,		
+	course_id int NOT NULL,	
+	certification_date timestamp NOT NULL default current_timestamp,		
 	user_id	Int NOT NULL,	
-	certificate_number	serial NOT NULL,
+	certificate_number serial NOT NULL,
 	FOREIGN KEY(course_id) REFERENCES course(course_id),
 	FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
-COMMENT ON TABLE  certificate 		 			 IS 'Таблица сертификатов о прохождении курсов';
-COMMENT ON COLUMN certificate.certificate_id  	 IS 'Первичный ключ, уникальный идентификатор сертификата';
-COMMENT ON COLUMN certificate.course_id  		 IS 'Внешний ключ к таблице курса (tcb.course)';
-COMMENT ON COLUMN certificate.certification_date IS 'Дата получения сертификата о прохождении курса';
-COMMENT ON COLUMN certificate.user_id 			 IS 'Внешний ключ к таблице зарегистрированных пользователей (tcb.users)';
-COMMENT ON COLUMN certificate.certificate_number IS 'Уникальный номер сертификата';
+COMMENT ON TABLE  certificate				IS 'Таблица сертификатов о прохождении курсов';
+COMMENT ON COLUMN certificate.certificate_id		IS 'Первичный ключ, уникальный идентификатор сертификата';
+COMMENT ON COLUMN certificate.course_id			IS 'Внешний ключ к таблице курса (tcb.course)';
+COMMENT ON COLUMN certificate.certification_date 	IS 'Дата получения сертификата о прохождении курса';
+COMMENT ON COLUMN certificate.user_id			IS 'Внешний ключ к таблице зарегистрированных пользователей (tcb.users)';
+COMMENT ON COLUMN certificate.certificate_number	IS 'Уникальный номер сертификата';
 
 CREATE INDEX certificate_certification_date_idx ON tcb.certificate USING btree (certification_date);
 
@@ -137,10 +137,10 @@ FROM users
 CREATE TABLE scheme -- таблица схемы задачи
 (
 	scheme_id serial NOT NULL PRIMARY KEY,	
-	scheme_script text	NOT NULL		
+	scheme_script text NOT NULL		
 );
 
-COMMENT ON TABLE  scheme  		 		 IS 'Таблица скриптов для схем задач курса';
+COMMENT ON TABLE  scheme  		 IS 'Таблица скриптов для схем задач курса';
 COMMENT ON COLUMN scheme.scheme_id  	 IS 'Первичный ключ, уникальный идентификатор схемы задачи';
 COMMENT ON COLUMN scheme.scheme_script 	 IS 'Тело скрипта схемы задачи';
 
@@ -158,18 +158,18 @@ CREATE TABLE tasks -- таблица задач курса
 (
 	task_id	serial NOT NULL	PRIMARY KEY,	
 	task_text text	NOT NULL,		
-	task_script	text NOT NULL,		
+	task_script text NOT NULL,		
 	solution text NOT NULL,		
 	scheme_id int NULL,
 	FOREIGN KEY(scheme_id) REFERENCES scheme(scheme_id)	
 );
 
-COMMENT ON TABLE  tasks  		 	 IS 'Таблица задач курса';
-COMMENT ON COLUMN tasks.task_id  	 IS 'Первичный ключ, уникальный идентификатор задачи';
-COMMENT ON COLUMN tasks.task_text  	 IS 'Текст задачи, описание условий для решения';
-COMMENT ON COLUMN tasks.task_script  IS 'Тело скрипта задачи';
-COMMENT ON COLUMN tasks.solution 	 IS 'Текст правильного решения задачи для пользоватетелей с премиум-статусом';
-COMMENT ON COLUMN tasks.scheme_id 	 IS 'Внешний ключ к таблице схемы задачи (tcb.sheme)';
+COMMENT ON TABLE  tasks			IS 'Таблица задач курса';
+COMMENT ON COLUMN tasks.task_id		IS 'Первичный ключ, уникальный идентификатор задачи';
+COMMENT ON COLUMN tasks.task_text	IS 'Текст задачи, описание условий для решения';
+COMMENT ON COLUMN tasks.task_script  	IS 'Тело скрипта задачи';
+COMMENT ON COLUMN tasks.solution	IS 'Текст правильного решения задачи для пользоватетелей с премиум-статусом';
+COMMENT ON COLUMN tasks.scheme_id	IS 'Внешний ключ к таблице схемы задачи (tcb.sheme)';
 
 
 --drop table tasks
@@ -199,18 +199,18 @@ CREATE TABLE lesson --таблица урока
 	task_id	 int NULL,
 	lesson_order int NOT NULL,
 	lesson_name text NOT NULL,		
-	theory_text	text NULL,
+	theory_text text NULL,
 	FOREIGN KEY (course_id) REFERENCES course(course_id),
 	FOREIGN KEY (task_id) REFERENCES tasks(task_id)
 );
 
-COMMENT ON TABLE  lesson  		 	 	IS 'Таблица уроков курса';
+COMMENT ON TABLE  lesson			IS 'Таблица уроков курса';
 COMMENT ON COLUMN lesson.lesson_id 	 	IS 'Первичный ключ, уникальный идентификатор урока';
 COMMENT ON COLUMN lesson.course_id 	 	IS 'Внешний ключ к таблице курса (tcb.cource)';
 COMMENT ON COLUMN lesson.task_id  	 	IS 'Внешний ключ к таблице задачи (tcb.tasks)';
-COMMENT ON COLUMN lesson.lesson_order	IS 'Порядковый номер урока';
-COMMENT ON COLUMN lesson.lesson_name  	IS 'Название урока';
-COMMENT ON COLUMN lesson.theory_text    IS 'Текс содержания урока, методология, учебные материалы';
+COMMENT ON COLUMN lesson.lesson_order		IS 'Порядковый номер урока';
+COMMENT ON COLUMN lesson.lesson_name  		IS 'Название урока';
+COMMENT ON COLUMN lesson.theory_text    	IS 'Текс содержания урока, методология, учебные материалы';
 
 CREATE INDEX lesson_lesson_name_idx ON tcb.lesson USING btree (lesson_name);
 
@@ -247,7 +247,7 @@ CREATE TABLE course_res -- таблица пройденного курса
 	FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
-COMMENT ON TABLE  course_res  		 		IS 'Таблица учета полного прохождения пользоватетем курса (Отметка о прохождении курса)';
+COMMENT ON TABLE  course_res  		 	IS 'Таблица учета полного прохождения пользоватетем курса (Отметка о прохождении курса)';
 COMMENT ON COLUMN course_res.course_res_id 	IS 'Первичный ключ, уникальный идентификатор пройденого пользователем курса';
 COMMENT ON TABLE  course_res.course_id  	IS 'Внешний ключ к таблице курсов (tcb.course)';
 COMMENT ON COLUMN course_res.user_id 	 	IS 'Внешний ключ к таблице зарегистрированных пользователей (tcb.users)';
@@ -285,13 +285,13 @@ CREATE TABLE lesson_res --таблица пройденного урока
 (
 	lesson_res_id bigserial	NOT NULL PRIMARY KEY,	
 	lesson_id int NOT NULL,		
-	user_id int	NOT NULL,	
+	user_id int NOT NULL,	
 	reached timestamp NOT NULL default current_timestamp,	
 	FOREIGN KEY(lesson_id) REFERENCES lesson(lesson_id),
 	FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
-COMMENT ON TABLE  lesson_res  		 		IS 'Таблица учета полного прохождения урока пользоватетем (Отметка о прохождении урока)';
+COMMENT ON TABLE  lesson_res  		 	IS 'Таблица учета полного прохождения урока пользоватетем (Отметка о прохождении урока)';
 COMMENT ON COLUMN lesson_res.lesson_res_id 	IS 'Первичный ключ, уникальный идентификатор пройденного пользователем урока';
 COMMENT ON COLUMN lesson_res.lesson_id 		IS 'Внешнйи ключ к таблице уроков (tcb.lesson)';
 COMMENT ON COLUMN lesson_res.user_id 		IS 'Внешний ключ к таблице зарегистрированных пользователей (tcb.users)';
@@ -325,14 +325,14 @@ FROM lesson_res lr
 CREATE TABLE task_res -- таблица решенной задачи
 (
 	task_res_id bigserial NOT NULL PRIMARY KEY,	
-	task_id int	NOT NULL, 	
-	user_id int	NOT NULL,		
+	task_id int NOT NULL, 	
+	user_id int NOT NULL,		
 	reached timestamp NOT NULL default current_timestamp,
 	FOREIGN KEY(user_id) REFERENCES users(id),
 	FOREIGN KEY(task_id) REFERENCES tasks(task_id)
 );
 
-COMMENT ON TABLE  task_res  		 		IS 'Таблица учета решенных пользователем задач (Отметка о решении задачи)';
+COMMENT ON TABLE  task_res  		 	IS 'Таблица учета решенных пользователем задач (Отметка о решении задачи)';
 COMMENT ON COLUMN task_res.task_res_id  	IS 'Первичный ключ, уникальный идентификатор решенной пользователем задачи';
 COMMENT ON COLUMN task_res.task_id  		IS 'Внешнйи ключ к таблице задач (tcb.tasks)';
 COMMENT ON COLUMN task_res.user_id  		IS 'Внешний ключ к таблице зарегистрированных пользователей (tcb.users)';
